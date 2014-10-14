@@ -40,6 +40,16 @@ namespace _01_ListItems
                 }
             }
 
+            Console.WriteLine("----------");
+
+            // Find Ids that exist in Employee list 1
+            var list1Employees = employeeList1.Where(l => !employeeList2.Any(e => e.Id == l.Id)).ToList();
+            foreach (var employee in list1Employees)
+            {
+                Console.WriteLine(employee.Name);
+            }
+
+
             Console.ReadLine();
         }
     }
