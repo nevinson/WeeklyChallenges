@@ -42,13 +42,21 @@ namespace _01_ListItems
 
             Console.WriteLine("----------");
 
-            // Find Ids that exist in Employee list 1
+            // Find Ids that exist in Employee list 1 only
             var list1Employees = employeeList1.Where(l => !employeeList2.Any(e => e.Id == l.Id)).ToList();
             foreach (var employee in list1Employees)
             {
                 Console.WriteLine(employee.Name);
             }
 
+            Console.WriteLine("----------");
+
+            // Find Ids that exist in Employee list 2 only
+            var list2Employees = employeeList2.Where(r => !employeeList1.Any(s => s.Id == r.Id)).ToList();
+            foreach (var employee in list2Employees)
+            {
+                Console.WriteLine(employee.Name);
+            }
 
             Console.ReadLine();
         }
